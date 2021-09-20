@@ -1,0 +1,16 @@
+  keycloak:
+    restart: always
+    image: quay.io/keycloak/keycloak
+    container_name: keycloak-2
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.keycloak.rule=Host(`keycloak.docker`)
+      - traefik.http.routers.keycloak.entrypoints=web
+      - traefik.port=8080
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=VMware123!
+      - PROXY_ADDRESS_FORWARDING=true
+      #- KEYCLOAK_FRONTEND_URL=keycloak.docker
+
+# vim: tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent smartindent

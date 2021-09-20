@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  whoami:
+    deploy:
+      replicas: 2
+    image: traefik/whoami
+    networks:
+      - proxy
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.who.rule=Host(`who.docker`)
+      - traefik.http.routers.who.entrypoints=http
+      - traefik.http.services.who.loadbalancer.server.port=80
+networks:
+  proxy:
+    external: true
