@@ -5,7 +5,7 @@
 Create docker network  
 docker network create proxy  
 
-* start treafik
+* start treafik  
   cd traefik && docker-compose up -d  
 
 * Now do the same for the rest of the applications  
