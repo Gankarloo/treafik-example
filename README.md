@@ -21,23 +21,23 @@ This setup works for fedore 34 and has dnsmasq only for wildcard lookups
 
 ### /etc/dnsmasq.conf
 
-no-resolv
-no-poll
-address=/.docker/127.0.0.1
-user=dnsmasq
-group=dnsmasq
-interface=lo
-listen-address=127.0.0.2
-no-dhcp-interface=127.0.0.2
-bind-interfaces
-no-hosts
+no-resolv  
+no-poll  
+address=/.docker/127.0.0.1  
+user=dnsmasq  
+group=dnsmasq  
+interface=lo  
+listen-address=127.0.0.2  
+no-dhcp-interface=127.0.0.2  
+bind-interfaces  
+no-hosts  
 
 ### /etc/systemd/resolved.conf
 
-[Resolve]
-DNS=127.0.0.2
+[Resolve]  
+DNS=127.0.0.2  
 
 ### restart services
 
-systemctl restart dnsmasq.service
-systemctl restart systemd-resolved
+systemctl restart dnsmasq.service  
+systemctl restart systemd-resolved  
