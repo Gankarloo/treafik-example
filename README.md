@@ -18,6 +18,7 @@ This setup requires you to setup your hosts file accordingly.
 
 a good tip is to install dnsmasq.  
 This setup works for fedore 34 and has dnsmasq only for wildcard lookups
+it will resolve all queries to *.docker to 127.0.0.1
 
 ### /etc/dnsmasq.conf
 
